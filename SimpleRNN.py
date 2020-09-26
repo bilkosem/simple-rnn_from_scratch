@@ -1,12 +1,11 @@
-'''
 
-Author: Bilgehan Kösem
-E-mail: bilkos92@gmail.com
-Date created: 07.18.2020
-Date last modified: 07.18.2020
-Python Version: 3.7
-    
-'''
+###############################################################################
+# Author: Bilgehan Kösem
+# E-mail: bilkos92@gmail.com
+# Date created: 07.18.2020
+# Date last modified: 07.18.2020
+# Python Version: 3.7
+###############################################################################
 
 import numpy as np
 import copy
@@ -51,7 +50,7 @@ class SimpleRNN:
             self.gradient_list.append(np.zeros((self.shape[i],self.shape[i+1])))
         
         
-        #Initialize horizontal wieghts: W_hor
+        #Initialize horizontal weights: W_horizontal
         self.W_hor = np.zeros((self.shape[1],self.shape[1]))
         self.gradient_list.append(np.zeros((self.shape[1],self.shape[1])))
 
