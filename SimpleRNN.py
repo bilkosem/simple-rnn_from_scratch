@@ -126,7 +126,7 @@ class SimpleRNN:
         for t in reversed(range(1,self.time_steps+1)):#2 1 0
             
             d_Wih.append((der_chain @ self.Q_intime[t][0].transpose()).transpose())
-            d_Whh.append((der_chain @ self.Q_intime[t][1].transpose()).transpose())
+            d_Whh.append((der_chain @ self.Q_intime[t-1][1].transpose()).transpose())
             d_bh.append(der_chain)
             self.dh_list.append(der_chain)
             der_chain = self.W_hor @ (self.dh_dfi(t-1) * der_chain)
